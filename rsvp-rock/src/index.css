@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Montserrat:wght@400;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-rock-bg: #151515;
+  --color-rock-card: #1c1c1c;
+  --color-rock-border: #333333;
+  --color-rock-red: #991b1b;
+  --color-rock-gold: #b4853f;
+  --color-rock-text: #e5e5e5;
+  --color-rock-muted: #888888;
+  
+  --font-sans: "Montserrat", sans-serif;
+  --font-vintage: "Alfa Slab One", serif;
+}
+
+body {
+  background-color: var(--color-rock-bg);
+  color: var(--color-rock-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+input, select {
+  color-scheme: dark;
+}
