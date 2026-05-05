@@ -19,7 +19,7 @@ export default function EventInfo() {
         <CalendarClock className="mx-auto mb-4 text-rock-red" size={32} strokeWidth={1.5} />
         <p className="text-rock-muted text-xs uppercase tracking-[0.3em] mb-3 font-semibold">Sábado</p>
         <p className="text-5xl font-vintage text-rock-gold mb-3">16/05</p>
-        <p className="text-rock-text text-sm uppercase tracking-widest font-semibold">A partir das 18h</p>
+        <p className="text-rock-text text-sm uppercase tracking-widest font-semibold">A partir das 15h</p>
       </div>
 
       <div className="bg-rock-card/80 backdrop-blur-sm p-8 text-center relative border-2 border-rock-border border-dashed">
@@ -35,6 +35,16 @@ export default function EventInfo() {
           <Beer size={16} />
           <p className="text-xs uppercase tracking-widest font-semibold">Cerveja Gelada & Rock</p>
         </div>
+      </div>
+
+      <div className="md:col-span-2 bg-rock-red/90 backdrop-blur-sm py-8 px-6 text-center relative border-2 border-rock-red outline outline-2 outline-offset-4 outline-rock-red/30 mt-2 shadow-2xl">
+        <Beer className="mx-auto mb-4 text-rock-gold drop-shadow-md" size={36} strokeWidth={1.5} />
+        <h3 className="text-2xl md:text-3xl font-vintage text-white uppercase tracking-wider mb-3 drop-shadow-md">
+          Cada um leva sua bebida
+        </h3>
+        <p className="text-rock-gold text-xs md:text-sm tracking-[0.2em] uppercase font-bold">
+          Porque o churrasco e o show é por conta do aniversariante!
+        </p>
       </div>
     </motion.section>
   );
