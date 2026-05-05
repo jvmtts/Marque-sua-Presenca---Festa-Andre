@@ -19,7 +19,7 @@ export default function EventInfo() {
         <CalendarClock className="mx-auto mb-4 text-rock-red" size={32} strokeWidth={1.5} />
         <p className="text-rock-muted text-xs uppercase tracking-[0.3em] mb-3 font-semibold">Sábado</p>
         <p className="text-5xl font-vintage text-rock-gold mb-3">16/05</p>
-        <p className="text-rock-text text-sm uppercase tracking-widest font-semibold">A partir das 15h</p>
+        <p className="text-rock-text text-sm uppercase tracking-widest font-semibold">A partir das 18h</p>
       </div>
 
       <div className="bg-rock-card/80 backdrop-blur-sm p-8 text-center relative border-2 border-rock-border border-dashed">

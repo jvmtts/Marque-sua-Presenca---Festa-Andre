@@ -119,7 +119,7 @@ export default function RSVPForm() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           <div className="text-center mb-4">
             <h2 className="text-2xl font-vintage uppercase tracking-widest text-white mb-3 mt-2">Confirme sua presença</h2>
-            <p className="text-rock-red text-xs font-bold uppercase tracking-[0.2em]">Até o dia 13/05</p>
+            <p className="text-rock-red text-xs font-bold uppercase tracking-[0.2em]">Até o dia 11/05</p>
           </div>
 
           <div>
