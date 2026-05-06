@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Flame } from 'lucide-react';
 
-// Faca de Chef Premium com detalhes de madeira e latão
 const PremiumKnife = ({ className }) => (
   <svg viewBox="0 0 100 400" className={className} style={{ overflow: 'visible' }}>
     <defs>
@@ -20,26 +19,20 @@ const PremiumKnife = ({ className }) => (
       </linearGradient>
     </defs>
     
-    {/* Lâmina Larga de Chef */}
     <path d="M 50,220 L 50,40 Q 50,10 65,10 Q 100,80 100,220 Z" fill="url(#kMetal)" />
-    {/* Fio de corte reluzente */}
     <path d="M 50,40 Q 50,10 65,10 Q 100,80 100,220" fill="none" stroke="#ffffff" strokeWidth="2.5" opacity="0.8"/>
     
-    {/* Guarda Aço Escovado */}
     <rect x="44" y="220" width="32" height="12" rx="4" fill="#9ca3af" />
     <rect x="44" y="220" width="32" height="5" fill="#f3f4f6" opacity="0.9" />
     
-    {/* Cabo Ergonômico */}
     <path d="M 50,232 L 70,232 L 72,330 Q 72,340 60,340 L 60,340 Q 48,340 48,330 Z" fill="url(#kHandle)" />
     
-    {/* Rebites em Latão Dourado */}
     <circle cx="60" cy="255" r="3.5" fill="#fbbf24" />
     <circle cx="60" cy="285" r="3.5" fill="#fbbf24" />
     <circle cx="60" cy="315" r="3.5" fill="#fbbf24" />
   </svg>
 );
 
-// Garfo Trinchante Premium (3 pontas esguias)
 const PremiumFork = ({ className }) => (
   <svg viewBox="0 0 100 400" className={className} style={{ overflow: 'visible' }}>
     <defs>
@@ -57,7 +50,6 @@ const PremiumFork = ({ className }) => (
       </linearGradient>
     </defs>
     
-    {/* Cabeça do Garfo e Haste */}
     <path d="
       M 56 220 L 56 160
       C 56 130, 31 130, 31 100
@@ -70,35 +62,31 @@ const PremiumFork = ({ className }) => (
       L 64 220 Z
     " fill="url(#fMetal)" />
     
-    {/* Sombras e Reflexos 3D das pontas */}
     <path d="M 43 80 C 43 105, 54 105, 54 80" fill="none" stroke="#4b5563" strokeWidth="2.5" opacity="0.6" />
     <path d="M 66 80 C 66 105, 77 105, 77 80" fill="none" stroke="#4b5563" strokeWidth="2.5" opacity="0.6" />
     <path d="M 31 20 L 37 10 L 43 20" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.8"/>
     <path d="M 54 20 L 60 10 L 66 20" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.8"/>
     <path d="M 77 20 L 83 10 L 89 20" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.8"/>
 
-    {/* Guarda Aço Escovado */}
     <rect x="44" y="220" width="32" height="12" rx="4" fill="#9ca3af" />
     <rect x="44" y="220" width="32" height="5" fill="#f3f4f6" opacity="0.9" />
     
-    {/* Cabo Ergonômico */}
     <path d="M 50 232 L 70 232 L 72 330 Q 72,340 60 340 L 60 340 Q 48,340 48 330 Z" fill="url(#fHandle)" />
     
-    {/* Rebites em Latão Dourado */}
     <circle cx="60" cy="255" r="3.5" fill="#fbbf24" />
     <circle cx="60" cy="285" r="3.5" fill="#fbbf24" />
     <circle cx="60" cy="315" r="3.5" fill="#fbbf24" />
   </svg>
 );
 
-const ThunderIcon = ({ size, className }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+const ThunderIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
     <path d="M13 2L3 14h9l-1 8 10-14h-8l2-8z" />
   </svg>
 );
 
 const GlowingFire = () => (
-  <div className="relative flex justify-center items-end h-[220px] w-[220px]">
+  <div className="relative flex justify-center items-end h-[220px] w-[220px] transform scale-75 md:scale-100 origin-bottom">
     <motion.div
       animate={{ opacity: [0.6, 1, 0.6], scale: [0.85, 1.15, 0.85] }}
       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -134,56 +122,50 @@ export default function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="w-full flex flex-col items-center text-center mt-2 mb-4 overflow-hidden"
+      className="w-full flex flex-col items-center text-center mt-2 mb-4 overflow-hidden px-2"
     >
       <p className="text-rock-text text-sm md:text-base tracking-[0.4em] uppercase font-bold drop-shadow-md z-30 relative">
         Rock 'n' Roll
       </p>
 
-      {/* Cenário Gigante de Fundo (Talheres Cruzados e Fogo) */}
-      <div className="relative flex justify-center items-end h-[320px] md:h-[420px] w-full max-w-5xl mt-8 mx-auto">
+      <div className="relative flex justify-center items-end h-[240px] sm:h-[320px] md:h-[420px] w-full max-w-5xl mt-4 md:mt-8 mx-auto">
         
-        {/* Faca Gigante Esquerda */}
         <motion.div
           animate={{ rotate: [-32, -36, -32] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute z-0 origin-[50%_90%] right-[52%] md:right-[54%] bottom-[-50px] md:bottom-[-90px]"
+          className="absolute z-0 origin-[50%_90%] right-[52%] md:right-[54%] bottom-[-30px] md:bottom-[-90px]"
         >
-          <PremiumKnife className="h-[360px] md:h-[500px] w-auto drop-shadow-[0_20px_30px_rgba(0,0,0,1)]" />
+          <PremiumKnife className="h-[260px] sm:h-[360px] md:h-[500px] w-auto drop-shadow-[0_20px_30px_rgba(0,0,0,1)]" />
         </motion.div>
 
-        {/* Fogo Gigante Centro */}
-        <div className="relative z-10 mb-8 md:mb-16">
+        <div className="relative z-10 mb-6 md:mb-16">
           <GlowingFire />
         </div>
 
-        {/* Garfo Gigante Direita */}
         <motion.div
           animate={{ rotate: [32, 36, 32] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute z-0 origin-[50%_90%] left-[52%] md:left-[54%] bottom-[-50px] md:bottom-[-90px]"
+          className="absolute z-0 origin-[50%_90%] left-[52%] md:left-[54%] bottom-[-30px] md:bottom-[-90px]"
         >
-          <PremiumFork className="h-[360px] md:h-[500px] w-auto drop-shadow-[0_20px_30px_rgba(0,0,0,1)]" />
+          <PremiumFork className="h-[260px] sm:h-[360px] md:h-[500px] w-auto drop-shadow-[0_20px_30px_rgba(0,0,0,1)]" />
         </motion.div>
       </div>
 
-      {/* Fita Vermelha Gigante Sobrepondo Tudo */}
-      <div className="flex justify-center w-full z-20 relative -mt-8 md:-mt-16 mb-8">
-        <div className="bg-rock-red text-white py-6 px-12 md:px-32 relative [clip-path:polygon(0_0,100%_0,95%_50%,100%_100%,0_100%,5%_50%)] border-y-2 border-rock-red/50 drop-shadow-[0_25px_30px_rgba(0,0,0,1)]">
-          <h2 className="text-3xl md:text-5xl font-vintage tracking-widest uppercase whitespace-nowrap drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+      <div className="flex justify-center w-full z-20 relative -mt-6 sm:-mt-8 md:-mt-16 mb-6 sm:mb-8">
+        <div className="bg-rock-red text-white py-4 px-6 sm:py-6 md:px-32 relative [clip-path:polygon(0_0,100%_0,95%_50%,100%_100%,0_100%,5%_50%)] border-y-2 border-rock-red/50 drop-shadow-[0_25px_30px_rgba(0,0,0,1)]">
+          <h2 className="text-[1.4rem] sm:text-3xl md:text-5xl font-vintage tracking-widest uppercase whitespace-nowrap drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
             Churrasco e 50tão
           </h2>
         </div>
       </div>
 
       <div className="flex items-center gap-4 mb-2 mt-2">
-        <div className="w-16 h-px bg-rock-gold"></div>
-        <span className="text-rock-text text-2xl font-vintage uppercase tracking-widest">Do</span>
-        <div className="w-16 h-px bg-rock-gold"></div>
+        <div className="w-12 sm:w-16 h-px bg-rock-gold"></div>
+        <span className="text-rock-text text-xl sm:text-2xl font-vintage uppercase tracking-widest">Do</span>
+        <div className="w-12 sm:w-16 h-px bg-rock-gold"></div>
       </div>
 
-      {/* Nome "ANDRÉ" GIGANTE ladeado por raios dourados */}
-      <div className="flex items-center justify-center gap-4 md:gap-10 mb-6 w-full">
+      <div className="flex items-center justify-center gap-3 sm:gap-6 md:gap-10 mb-6 w-full">
         <motion.div
           animate={{ 
             opacity: [1, 0.5, 1, 1, 0.7, 1],
@@ -199,10 +181,10 @@ export default function Header() {
           }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ThunderIcon size={72} className="text-rock-gold transform -rotate-12" />
+          <ThunderIcon className="w-10 h-10 sm:w-14 sm:h-14 md:w-[72px] md:h-[72px] text-rock-gold transform -rotate-12" />
         </motion.div>
         
-        <h1 className="text-7xl md:text-[10rem] font-vintage tracking-wider text-rock-text uppercase drop-shadow-[0_15px_15px_rgba(0,0,0,0.9)] leading-none mt-2">
+        <h1 className="text-6xl sm:text-7xl md:text-[10rem] font-vintage tracking-wider text-rock-text uppercase drop-shadow-[0_15px_15px_rgba(0,0,0,0.9)] leading-none mt-2">
           André
         </h1>
         
@@ -221,13 +203,13 @@ export default function Header() {
           }}
           transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
-          <ThunderIcon size={72} className="text-rock-gold transform rotate-12" />
+          <ThunderIcon className="w-10 h-10 sm:w-14 sm:h-14 md:w-[72px] md:h-[72px] text-rock-gold transform rotate-12" />
         </motion.div>
       </div>
 
       <div className="flex items-center gap-4 w-full max-w-md mt-2">
         <div className="h-px bg-rock-border flex-grow"></div>
-        <p className="text-rock-gold tracking-[0.4em] font-bold uppercase text-sm md:text-base drop-shadow-md">
+        <p className="text-rock-gold tracking-[0.2em] md:tracking-[0.4em] font-bold uppercase text-xs md:text-base drop-shadow-md whitespace-nowrap">
           Churrasco + Rock
         </p>
         <div className="h-px bg-rock-border flex-grow"></div>
