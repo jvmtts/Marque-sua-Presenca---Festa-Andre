@@ -5,51 +5,73 @@ import { Flame } from 'lucide-react';
 const PremiumKnife = ({ className }) => (
   <svg viewBox="0 0 100 400" className={className} style={{ overflow: 'visible' }}>
     <defs>
-      <linearGradient id="kMetal" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#d1d5db" />
-        <stop offset="20%" stopColor="#ffffff" />
-        <stop offset="60%" stopColor="#9ca3af" />
-        <stop offset="100%" stopColor="#4b5563" />
-      </linearGradient>
-      <linearGradient id="kHandle" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#1f2937" />
-        <stop offset="30%" stopColor="#374151" />
-        <stop offset="80%" stopColor="#111827" />
-        <stop offset="100%" stopColor="#030712" />
-      </linearGradient>
+      {/* High-resolution texture patterns for a premium look */}
+      <pattern id="knifeTexture" patternUnits="userSpaceOnUse" width="100" height="400">
+        <image 
+          href="https://images.unsplash.com/photo-1621516082481-37f07094b8e2?q=80&w=100&h=400&auto=format&fit=crop&blur=1" 
+          width="100" 
+          height="400" 
+          preserveAspectRatio="xMidYMid slice"
+        />
+      </pattern>
+      <pattern id="knifeHandleTexture" patternUnits="userSpaceOnUse" width="100" height="150" y="220">
+        <image 
+          href="https://images.unsplash.com/photo-1596700030113-149d52b12399?q=80&w=100&h=150&auto=format&fit=crop" 
+          width="100" 
+          height="150" 
+          preserveAspectRatio="xMidYMid slice"
+        />
+      </pattern>
     </defs>
     
-    <path d="M 50,220 L 50,40 Q 50,10 65,10 Q 100,80 100,220 Z" fill="url(#kMetal)" />
-    <path d="M 50,40 Q 50,10 65,10 Q 100,80 100,220" fill="none" stroke="#ffffff" strokeWidth="2.5" opacity="0.8"/>
+    {/* Blade (Metal) */}
+    <path d="M 50,220 L 50,40 Q 50,10 65,10 Q 100,80 100,220 Z" fill="url(#knifeTexture)" stroke="#4b5563" strokeWidth="0.5"/>
+    {/* Specular highlight ridge line */}
+    <path d="M 50,40 Q 50,10 65,10 Q 100,80 100,220" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6"/>
     
-    <rect x="44" y="220" width="32" height="12" rx="4" fill="#9ca3af" />
+    {/* Guard (Brushed Steel) */}
+    <rect x="44" y="220" width="32" height="12" rx="4" fill="#9ca3af" stroke="#4b5563" strokeWidth="0.5"/>
     <rect x="44" y="220" width="32" height="5" fill="#f3f4f6" opacity="0.9" />
     
-    <path d="M 50,232 L 70,232 L 72,330 Q 72,340 60,340 L 60,340 Q 48,340 48,330 Z" fill="url(#kHandle)" />
+    {/* Handle (Rich Wood Texture) */}
+    <path d="M 50,232 L 70,232 L 72,330 Q 72,340 60,340 L 60,340 Q 48,340 48,330 Z" fill="url(#knifeHandleTexture)" stroke="#1f2937" strokeWidth="0.5"/>
     
-    <circle cx="60" cy="255" r="3.5" fill="#fbbf24" />
-    <circle cx="60" cy="285" r="3.5" fill="#fbbf24" />
-    <circle cx="60" cy="315" r="3.5" fill="#fbbf24" />
+    {/* Brass Rivets with depth */}
+    <circle cx="60" cy="255" r="3.5" fill="#bfa36f" stroke="#78350f" strokeWidth="0.5"/>
+    <circle cx="60" cy="255" r="1" fill="#ffffff" opacity="0.5"/> {/* Specular highlight */}
+
+    <circle cx="60" cy="285" r="3.5" fill="#bfa36f" stroke="#78350f" strokeWidth="0.5"/>
+    <circle cx="60" cy="285" r="1" fill="#ffffff" opacity="0.5"/>
+
+    <circle cx="60" cy="315" r="3.5" fill="#bfa36f" stroke="#78350f" strokeWidth="0.5"/>
+    <circle cx="60" cy="315" r="1" fill="#ffffff" opacity="0.5"/>
   </svg>
 );
 
 const PremiumFork = ({ className }) => (
   <svg viewBox="0 0 100 400" className={className} style={{ overflow: 'visible' }}>
     <defs>
-      <linearGradient id="fMetal" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#9ca3af" />
-        <stop offset="30%" stopColor="#ffffff" />
-        <stop offset="70%" stopColor="#d1d5db" />
-        <stop offset="100%" stopColor="#6b7280" />
-      </linearGradient>
-      <linearGradient id="fHandle" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#1f2937" />
-        <stop offset="30%" stopColor="#374151" />
-        <stop offset="80%" stopColor="#111827" />
-        <stop offset="100%" stopColor="#030712" />
-      </linearGradient>
+      {/* Texture pattern matching the knife handle */}
+      <pattern id="forkHandleTexture" patternUnits="userSpaceOnUse" width="100" height="150" y="220">
+        <image 
+          href="https://images.unsplash.com/photo-1596700030113-149d52b12399?q=80&w=100&h=150&auto=format&fit=crop" 
+          width="100" 
+          height="150" 
+          preserveAspectRatio="xMidYMid slice"
+        />
+      </pattern>
+      {/* Texture matching the knife blade */}
+      <pattern id="forkTexture" patternUnits="userSpaceOnUse" width="100" height="400">
+        <image 
+          href="https://images.unsplash.com/photo-1621516082481-37f07094b8e2?q=80&w=100&h=400&auto=format&fit=crop&blur=1" 
+          width="100" 
+          height="400" 
+          preserveAspectRatio="xMidYMid slice"
+        />
+      </pattern>
     </defs>
     
+    {/* Head (Metal Texture) */}
     <path d="
       M 56 220 L 56 160
       C 56 130, 31 130, 31 100
@@ -60,22 +82,31 @@ const PremiumFork = ({ className }) => (
       L 77 20 L 83 10 L 89 20 L 89 100
       C 89 130, 64 130, 64 160
       L 64 220 Z
-    " fill="url(#fMetal)" />
+    " fill="url(#forkTexture)" stroke="#4b5563" strokeWidth="0.5"/>
     
-    <path d="M 43 80 C 43 105, 54 105, 54 80" fill="none" stroke="#4b5563" strokeWidth="2.5" opacity="0.6" />
-    <path d="M 66 80 C 66 105, 77 105, 77 80" fill="none" stroke="#4b5563" strokeWidth="2.5" opacity="0.6" />
-    <path d="M 31 20 L 37 10 L 43 20" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.8"/>
-    <path d="M 54 20 L 60 10 L 66 20" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.8"/>
-    <path d="M 77 20 L 83 10 L 89 20" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.8"/>
+    {/* Highlights for depth */}
+    <path d="M 43 80 C 43 105, 54 105, 54 80" fill="none" stroke="#6b7280" strokeWidth="2" opacity="0.4" />
+    <path d="M 66 80 C 66 105, 77 105, 77 80" fill="none" stroke="#6b7280" strokeWidth="2" opacity="0.4" />
+    <path d="M 31 20 L 37 10 L 43 20" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6"/>
+    <path d="M 54 20 L 60 10 L 66 20" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6"/>
+    <path d="M 77 20 L 83 10 L 89 20" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6"/>
 
-    <rect x="44" y="220" width="32" height="12" rx="4" fill="#9ca3af" />
+    {/* Guard (Brushed Steel) */}
+    <rect x="44" y="220" width="32" height="12" rx="4" fill="#9ca3af" stroke="#4b5563" strokeWidth="0.5"/>
     <rect x="44" y="220" width="32" height="5" fill="#f3f4f6" opacity="0.9" />
     
-    <path d="M 50 232 L 70 232 L 72 330 Q 72,340 60 340 L 60 340 Q 48,340 48 330 Z" fill="url(#fHandle)" />
+    {/* Handle (Rich Wood Texture) */}
+    <path d="M 50 232 L 70 232 L 72 330 Q 72,340 60 340 L 60 340 Q 48,340 48 330 Z" fill="url(#forkHandleTexture)" stroke="#1f2937" strokeWidth="0.5"/>
     
-    <circle cx="60" cy="255" r="3.5" fill="#fbbf24" />
-    <circle cx="60" cy="285" r="3.5" fill="#fbbf24" />
-    <circle cx="60" cy="315" r="3.5" fill="#fbbf24" />
+    {/* Brass Rivets with depth */}
+    <circle cx="60" cy="255" r="3.5" fill="#bfa36f" stroke="#78350f" strokeWidth="0.5"/>
+    <circle cx="60" cy="255" r="1" fill="#ffffff" opacity="0.5"/>
+
+    <circle cx="60" cy="285" r="3.5" fill="#bfa36f" stroke="#78350f" strokeWidth="0.5"/>
+    <circle cx="60" cy="285" r="1" fill="#ffffff" opacity="0.5"/>
+
+    <circle cx="60" cy="315" r="3.5" fill="#bfa36f" stroke="#78350f" strokeWidth="0.5"/>
+    <circle cx="60" cy="315" r="1" fill="#ffffff" opacity="0.5"/>
   </svg>
 );
 

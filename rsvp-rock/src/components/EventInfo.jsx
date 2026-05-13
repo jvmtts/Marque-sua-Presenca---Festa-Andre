@@ -2,52 +2,40 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, CalendarClock, Beer } from 'lucide-react';
 
-const EmberDeadline = ({ date }) => {
+const VintageDeadline = ({ date }) => {
   return (
-    <div className="relative w-full flex flex-col items-center justify-center pt-8 pb-4 mt-6">
-      <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-20 overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-[#fbbf24] rounded-full blur-[1px]"
-            initial={{ opacity: 0, y: 30, x: 0, scale: 0.5 }}
-            animate={{
-              opacity: [0, 1, 0],
-              y: [-10, -80 - Math.random() * 40],
-              x: [0, (i % 2 === 0 ? 25 : -25) + Math.random() * 15],
-              scale: [0.5, 1.3, 0.5]
-            }}
-            transition={{
-              duration: 2.5 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeOut"
-            }}
-          />
-        ))}
+    <div className="bg-rock-card/80 backdrop-blur-sm py-10 px-6 md:px-12 text-center relative border-2 border-rock-red border-dashed mt-6">
+      <div className="absolute -top-3 -left-3 w-6 h-6 bg-black rounded-full border-b-2 border-r-2 border-rock-red border-dashed transform rotate-45"></div>
+      <div className="absolute -top-3 -right-3 w-6 h-6 bg-black rounded-full border-b-2 border-l-2 border-rock-red border-dashed transform -rotate-45"></div>
+      <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-black rounded-full border-t-2 border-r-2 border-rock-red border-dashed transform -rotate-45"></div>
+      <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-black rounded-full border-t-2 border-l-2 border-rock-red border-dashed transform rotate-45"></div>
+
+      <div className="flex flex-col items-center justify-center">
+        <h3 className="text-rock-red font-bold uppercase tracking-[0.4em] text-xs md:text-sm mb-6">
+          Atenção ao Prazo
+        </h3>
+        
+        <div className="flex items-center justify-center gap-4 md:gap-8 mb-2 w-full">
+          <div className="h-px bg-rock-border flex-grow max-w-[100px]"></div>
+          <p className="text-rock-text text-sm md:text-xl uppercase tracking-widest font-semibold whitespace-nowrap">
+            Confirmar Até
+          </p>
+          <div className="h-px bg-rock-border flex-grow max-w-[100px]"></div>
+        </div>
+
+        <motion.div
+          animate={{ scale: [1, 1.03, 1] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <h2 className="text-[5.5rem] md:text-[8rem] font-vintage text-rock-gold leading-none tracking-widest drop-shadow-[5px_5px_0_rgba(153,27,27,0.9)] mt-4 mb-6">
+            {date}
+          </h2>
+        </motion.div>
+
+        <p className="text-rock-muted text-xs md:text-sm tracking-[0.2em] uppercase font-bold">
+          Impreterivelmente
+        </p>
       </div>
-
-      <h3 className="text-rock-muted font-semibold uppercase tracking-[0.3em] text-sm mb-2 relative z-10 drop-shadow-md">
-        Confirmar até o dia
-      </h3>
-
-      <motion.div
-        animate={{
-          filter: [
-            "drop-shadow(0px 0px 8px rgba(234, 88, 12, 0.5))",
-            "drop-shadow(0px 0px 25px rgba(239, 68, 68, 1))",
-            "drop-shadow(0px 0px 8px rgba(234, 88, 12, 0.5))"
-          ]
-        }}
-        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-        className="relative z-10"
-      >
-        <h2 className="text-[6rem] md:text-[9rem] font-vintage font-bold tracking-widest leading-none text-transparent bg-clip-text bg-gradient-to-b from-[#fef08a] via-[#ea580c] to-[#991b1b]">
-          {date}
-        </h2>
-      </motion.div>
-      
-      <div className="w-40 md:w-60 h-1 bg-gradient-to-r from-transparent via-[#ea580c] to-transparent mt-4 opacity-60"></div>
     </div>
   );
 };
@@ -135,7 +123,7 @@ export default function EventInfo() {
       </div>
 
       <div className="md:col-span-2">
-        <EmberDeadline date="11/05" />
+        <VintageDeadline date="15/05" />
       </div>
 
     </motion.section>
