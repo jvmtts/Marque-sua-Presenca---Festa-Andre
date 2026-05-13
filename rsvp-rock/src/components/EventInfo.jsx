@@ -33,7 +33,7 @@ const VintageDeadline = ({ date }) => {
         </motion.div>
 
         <p className="text-rock-muted text-xs md:text-sm tracking-[0.2em] uppercase font-bold">
-          Impreterivelmente
+          Não deixe para a última hora
         </p>
       </div>
     </div>
